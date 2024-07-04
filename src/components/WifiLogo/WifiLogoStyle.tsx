@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 30,
-    color: '#CCC'
+    color: '#4D4D4D'
 
   },
   image: {
