@@ -3,11 +3,16 @@ import { View, TextInput } from 'react-native';
 
 import { styles } from './WifiTextInputStyle';
 
-export function WifiTextInput() {
+interface WifiTextInputProps {
+  pass:string
+  name:string
+}
+
+export function WifiTextInput(props : WifiTextInputProps) {
   return (
     <>
-         <TextInput style={styles.textInput} placeholder='name' />
-         <TextInput style={styles.textInput} placeholder='pass' />
+         <TextInput style={styles.textInput} placeholder='name' value={props.name} />
+         <TextInput style={styles.textInput} placeholder='pass' value={props.pass} />
     </>
     
   );

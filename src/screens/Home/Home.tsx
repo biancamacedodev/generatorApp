@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { WifiLogo } from '../../components/WifiLogo/WifiLogo';
 
 import styles from './Style'
-import { WifiTextInput } from '../../components/WifiTextInput/WifiTextInput';
+import { PassButton } from '../../components/PassButton/PassButtton';
 
 export default function Home() {
   return (
@@ -14,11 +14,14 @@ export default function Home() {
         <WifiLogo  />
       </View>
 
-      <View>
-        <WifiTextInput  />
+      <View style={styles.inputContainer}>
+        
+      
+        <PassButton />
       </View>
 
-        <Text> Home works!</Text>
+
+        
         <StatusBar style='auto' />
     </View>
   );

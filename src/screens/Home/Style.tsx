@@ -14,8 +14,11 @@ const styles = StyleSheet.create({
       alignSelf: 'center',
       paddingTop: 20,
       paddingBottom: 10,
-      
-
+    },
+    inputContainer: {
+      width: '80%',
+      flexDirection: 'column',
+      alignItems: 'center',
     }
   });
   
