@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { View, Button, Text, Pressable } from 'react-native';
-
+import {Text, Pressable } from 'react-native';
+import * as Clipboard from 'expo-clipboard';
 import { styles } from './PassButttonStyles';
 import { WifiTextInput } from '../WifiTextInput/WifiTextInput';
 import generatePass from '../../services/passwordService';
 import generateName from '../../services/nameService';
+
 
 export function PassButton() {
   const [pass, setPass] = useState('')
@@ -18,6 +19,15 @@ export function PassButton() {
     setName(generaterName)
   }
 
+  function handleCopyButton() {
+    Clipboard.setStringAsync(pass)
+  }
+
+  function handleCopyButtonName() {
+    Clipboard.setStringAsync(name)
+
+  }
+
   
 
   return (
@@ -28,9 +38,15 @@ export function PassButton() {
             <Text  style={styles.text}>Generate ↻</Text>    
         </Pressable>
 
-        <Pressable style={styles.button} onPress={() => {console.log('Pressable clicado!')}}>
-            <Text style={styles.text}>Copy!!</Text>    
+        <Pressable style={styles.button} onPress={handleCopyButton}>
+            <Text style={styles.text}>Copy pass!!</Text>    
         </Pressable>
+
+        
+        <Pressable style={styles.button} onPress={handleCopyButtonName}>
+            <Text style={styles.text}>Copy name!!</Text>    
+        </Pressable>
+        
         
     </>
   );
